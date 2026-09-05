@@ -1,0 +1,1108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; /* يمنع السكرول العرضي بسبب الشجر */
+  background-image: url('./bggg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Marcellus', 'Cormorant Garamond', serif;
+  color: #e5c583;
+}
+
+/* التعديل الأساسي: ملغينا الـ max-width: 600px لكي تغطي الدعوة كامل الشاشة */
+.main-wrapper {
+  width: 100%;
+  max-width: 100%; /* عشان تاخد الشاشة كلها 100% من غير فراغات في الجناب */
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-section {
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* قسم البوابة وتداخلها */
+.gate-section {
+  width: 100%;
+  position: relative;
+  margin-top: -7px; /* نزول البوابة لكشف السلالم فوق */
+  z-index: 2;
+}
+
+.gate-wrapper {
+  position: relative;
+  width: 100%;
+  top: 70%;
+}
+
+.gate-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* الشجرتين الجانبيتين (معدلة بدون تكرار في الـ CSS) */
+.tree {
+  position: absolute;
+  top: -95px;
+  width: 48%;
+  height: auto;
+  z-index: 4;
+}
+
+.tree-left {
+  left: -12%;
+}
+
+.tree-right {
+  right: -12%;
+}
+
+/* --- أنيميشن النجمة الدوارة --- */
+.star-container {
+  position: absolute;
+  top: 1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 150px;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+  animation: spinClockwise 15s linear infinite;
+}
+
+.star-inner {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  transform-origin: center center;
+  animation: spinCounterClockwise 10s linear infinite;
+}
+
+@keyframes spinClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* --- المحتوى الداخلي --- */
+.gate-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.save-the-date {
+  font-family: 'Marcellus', serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #d4af37;
+}
+
+/* العداد */
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-box span {
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.time-box small {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
+  font-family: 'Marcellus', serif;
+}
+
+.colon {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* اسماء العروسين والعنوان */
+.wedding-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+}
+
+.couple-names {
+  font-family: 'Marcellus', serif;
+  font-size: 1.7rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #f3da9f;
+  white-space: nowrap;
+}
+
+.venue-name {
+  font-family: 'Marcellus', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  opacity: 0.95;
+}
+
+/* الأزرار الذهبية */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.gold-btn {
+  background-color: #c9a04a;
+  color: #2b080c;
+  font-family: 'Marcellus', serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 10px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  width: 90%;
+  max-width: 240px;
+  display: inline-block;
+}
+
+.gold-btn:hover {
+  background-color: #e5c583;
+  transform: translateY(-2px);
+}
+
+.couple-names, 
+.venue-name, 
+.save-the-date, 
+.wedding-details {
+  font-family: 'Forum', serif;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* التباعد بيظبط الشكل جداً */
+}
+
+
+/* المحتوى الداخلي للبوابة */
+.gate-content {
+  position: absolute;
+  top: 25%; /* بداية من تحت قوس البوابة العلوي */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 70%; /* إعطاء ارتفاع كافي داخل البوابة */
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ينقل المجموعة الأولى فوق والمجموعة الثانية تحت */
+  align-items: center;
+  text-align: center;
+}
+
+/* المجموعة الأولى (فوق) */
+.top-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* مسافة متناسقة وقريبة بين الكلمة والعداد */
+}
+
+/* المجموعة الثانية (تحت) */
+.bottom-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* مسافة متناسقة وقريبة بين الأسماء والأزرار */
+  margin-bottom: 360px; /* يرفع الجزء السفلي شوية من قاع البوابة */
+}
+
+.save-the-date {
+  font-family: 'Forum', serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-box span {
+  font-size: 1.6rem;
+  font-family: 'Forum', serif;
+  font-weight: 700;
+  color: #f3da9f;
+}
+
+.time-box small {
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  font-family: 'Forum', serif;
+}
+
+.couple-names {
+  font-family: 'Forum', serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #f3da9f;
+  white-space: nowrap;
+}
+
+.venue-name {
+  font-family: 'Forum', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.gold-btn {
+  background-color: #c9a04a;
+  color: #2b080c;
+  font-family: 'Forum', serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  min-width: 220px;
+  display: inline-block;
+}
+
+.outline-btn {
+  background-color: transparent;
+  border: 1px solid #c9a04a;
+  color: #f3da9f;
+}
+
+/* تطبيق الخط المفرود والنحيف على جميع النصوص */
+body, 
+.gate-content, 
+.save-the-date, 
+.couple-names, 
+.venue-name, 
+.time-box span, 
+.time-box small, 
+.gold-btn, 
+.no-photography span {
+  font-family: 'Poiret One', 'Cormorant Garamond', serif !important;
+  font-weight: 400;
+}
+
+/* ضبط شكل أسماء العروسين ليكون مطابقاً للصورة تماماً */
+.couple-names {
+  font-family: 'Poiret One', cursive !important;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #f3da9f;
+  text-transform: uppercase;
+}
+
+/* ضبط شكل الأرقام والتاريخ */
+.time-box span, 
+.date-number {
+  font-family: 'Poiret One', cursive !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+
+
+.no-phone-icon {
+  width: 50px;  /* يمكنك تقليلها إلى 20px أو 18px لتصغيرها أكثر */
+ 
+}
+
+.bottom-group {
+  position: relative;
+  height: 100%; /* عشان يسمح للـ absolute بالتحرك جوا المساحة */
+}
+
+.no-photography {
+  position: absolute;
+  bottom: 200px; /* بتنزلها لآخر البوابة من تحت خالص */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+
+/* الحاوية الرئيسية متمركزة بطول متناسق */
+.gate-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* تمركز دقيق في نصف البوابة */
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px; /* مسافة متناسقة وموحدة بين كل الأقسام */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-group, .middle-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.at-text {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #f3da9f;
+  margin: 0;
+}
+
+.hotel-name {
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: #f3da9f;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* زر اللوكيشن */
+
+
+/* إلغاء أي position absolute قديم في العناصر الداخلية */
+.event-date-info,
+.no-photography,
+.no-phone-icon {
+  position: static !important;
+  transform: none !important;
+}
+
+/* تنسيق قسم التاريخ */
+.event-date-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.event-day {
+  font-family: 'Poiret One', cursive, serif;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  color: #f3da9f;
+}
+
+.event-date {
+  font-family: 'Poiret One', cursive, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #c9a04a;
+}
+
+/* تنسيق قسم ممنوع التصوير أسفل التاريخ */
+.no-photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.no-phone-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-phone-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 1. رفع زر اللوكيشن لفوق وقربه من اسم الفندق */
+.buttons-container {
+  margin-top: -10px; /* تقليل المسافة فوق الزر لرفعه لأعلى */
+  margin-bottom: 15px;
+}
+
+/* 2. تنزيل قسم ممنوع التصوير والأيقونة لتحت شوية */
+.no-photography {
+  margin-top: 25px; /* زيادة المسافة الفاصلة لتنزيله لأسفل */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+
+
+
+
+
+
+
+.page-two-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* العناوين */
+.sub-title {
+  font-family: 'Poiret One', serif;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #c9a04a;
+}
+
+.main-title {
+  font-family: 'Poiret One', serif;
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  color: #f3da9f;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* حاوية الخريطة */
+.story-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: 200px;
+  margin: 20px 0;
+}
+
+.map-routes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* التموضع الخاص بالنقاظ على الخريطة */
+.map-location {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.egypt {
+  bottom: 15px;
+  left: 20px;
+}
+
+.jordan {
+  top: 10px;
+  right: 20px;
+}
+
+.riyadh-meet {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* نصوص البلدان والشخاص */
+.pin-icon {
+  font-size: 1.2rem;
+}
+
+.country-name {
+  font-family: 'Poiret One', serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f3da9f;
+}
+
+.person-tag {
+  font-family: 'Poiret One', serif;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: #c9a04a;
+}
+
+/* تصميم نقطة التلاقي بالرياض */
+.heart-pulse {
+  font-size: 1.5rem;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); }
+}
+
+.meet-title {
+  font-family: 'Poiret One', serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #c9a04a;
+  margin-top: 2px;
+}
+
+.meet-sub {
+  font-family: 'Poiret One', serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #f3da9f;
+  opacity: 0.9;
+}
+
+/* عبارات القصة */
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.story-text p {
+  font-family: 'Poiret One', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #f3da9f;
+  margin: 0;
+}
+
+.story-quote {
+  font-style: italic;
+  color: #c9a04a !important;
+  font-size: 0.95rem !important;
+}
+
+
+/* تأكدي إن الحاوية الرئيسية للصفحة الثانية متثبتة بـ relative وارتفاع كامل */
+.page-two-container {
+  position: relative;
+  min-height: 100vh; /* أو الارتفاع الخاص بالسكشن */
+  padding-bottom: 150px; /* مسافة عشان الكلام ينزل براحته وما يدخلش تحت الورود */
+}
+
+/* 1. رفع الكلام لفوق عشان يسيب مساحة للزخارف الضخمة تحت */
+.story-text {
+  margin-bottom: 60px; /* بيضمن إن النص يفضل باين فوق الزخارف */
+}
+
+
+
+
+
+/* 2. حاوية الـ 4 زهرات متثبتة في قاع الصفحة */
+.lotus-row {
+  position: absolute;
+  bottom: -20px; /* لضبط نزول الحواف السفلية */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 115%; /* تكبير العرض لإتاحة تداخل الزخارف وخروجها للحواف */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 3. تكبير كل زهرة وعمل تداخل بينها وبين التي بجوارها */
+.lotus-item {
+  width: 32%; /* تكبير العرض لتكون ضخمة كالصورة */
+  height: auto;
+  object-fit: contain;
+  margin: 0 -35px; /* الهامش السلبي يدمج الـ 4 زهرات داخل بعضهم لتكوين النقشة المتصلة */
+  filter: drop-shadow(0px -6px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* اختيار الزهرتين بالمنتصف لرفعهم قليلاً لإعطاء التدرج الهرمي */
+.lotus-item:nth-child(2),
+.lotus-item:nth-child(3) {
+  transform: translateY(-10px);
+  z-index: 2;
+}
+
+
+
+
+
+
+/* 1. ضبط container الصفحة ليعطي مساحة كافية */
+.page-two-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 180px; /* مسافة أمان لمنع تغطية الصورة على الكلام */
+  box-sizing: border-box;
+}
+
+/* 2. رفع النص فوق الزخرفة */
+.story-text {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+/* 3. تثبيت الصورة المدمجة في القاع تماماً */
+.bottom-lotus-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lotus-single-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* لتثبيت الجزء السفلي من الصورة مع قاع الشاشة */
+  object-fit: contain;
+  object-position: bottom;
+}
+
+
+
+
+
+
+
+
+
+/* 1. نزلة بسيطة جداً وتصغير المساحة جوا البوابة عشان مفيش حاجة تخرج بره */
+.gate-content {
+  position: absolute;
+  top: 20%; /* نزلة بسيطة خالص عن القديم عشان تبعد عن النجمة بس من غير ما تنزل أوي */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* بوزع العناصر بمسافات متساوية جوه الإطار من غير ما تخرج بره */
+  height: 68%; /* بيخلي المحتوى محصور جوه البوابة تماماً ومايعديش الحافة اللي تحت */
+  text-align: center;
+}
+
+/* 2. تصغير الخطوط بتاعت القسم اللي فوق */
+.top-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-the-date {
+  font-family: 'Poiret One', cursive, serif !important;
+  font-size: 1.25rem; /* تصغير الفونت شوية */
+  letter-spacing: 2px;
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+/* تصغير أرقام العداد والكلمات اللي تحتها */
+.time-box span {
+  font-family: 'Poiret One', cursive !important;
+  font-size: 1.2rem; /* تصغير الفونت */
+  font-weight: bold;
+}
+
+.time-box small {
+  font-size: 0.4rem; /* تصغير كلمة DAYS و HOURS */
+  letter-spacing: 1px;
+}
+
+.colon {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* 3. تصغير الفونتات اللي تحت (الفندق والتاريخ وأيقونة التصوير) عشان تكفي جوه الإطار بالظبط */
+.hotel-name {
+  font-size: 1.5rem !important; /* تصغير اسم الفندق شوية */
+  letter-spacing: 2px;
+}
+
+.event-day {
+  font-size: 0.9rem !important;
+}
+
+.event-date {
+  font-size: 1.2rem !important; /* تصغير تاريخ الحفلة */
+}
+
+.no-photography span {
+  font-size: 0.65rem !important; /* تصغير جملة ممنوع التصوير عشان تفضل جوه الحافة وما تطلعش بره */
+  margin-bottom: 60px;
+}
+
+.no-phone-icon {
+  width: 35px !important; /* تصغير حجم الأيقونة شوية عشان تناسب المسافة */
+  height: 35px !important;
+}
+
+
+
+
+/* 1. تصغير زر اللوكيشن وعرضه شوية عشان يب3 أشيك وجوه الإطار */
+.gold-btn {
+  padding: 6px 14px !important;
+  font-size: 0.65rem !important;
+  max-width: 190px !important;
+  border-radius: 30px !important;
+}
+
+/* 2. رفع أيقونة الموبايل وكلمة No Photography لفوق جوه البوابة تماماً */
+.no-photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 5px !important; /* شلنا الـ 60px القديمة عشان ما تخرجش بره */
+}
+
+.no-photography span {
+  font-size: 0.55rem !important; /* تصغير الخط عشان يبقى منسق جوه البوابة */
+  letter-spacing: 1px;
+}
+
+.no-phone-icon {
+  width: 28px !important; /* تصغير الأيقونة شوية عشان تطلع لفوق بأمان */
+  height: 28px !important;
+}
+
+
+
+
+/* زر اللوكيشن مظبوط وصغير زي ما اتفقنا */
+.gold-btn {
+  padding: 6px 14px !important;
+  font-size: 0.65rem !important;
+  max-width: 190px !important;
+  border-radius: 30px !important;
+}
+
+/* رفع أيقونة الموبايل لفوق وتكبيرها سيكا */
+.no-photography {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px !important; /* بتتحكم في مسافة البعد عن التاريخ وتطلع لفوق */
+  margin-bottom: 0px !important;
+}
+
+.no-photography span {
+  font-size: 0.58rem !important;
+  letter-spacing: 1px;
+}
+
+.no-phone-icon {
+  width: 40px !important; /* كبرنا حجم الأيقونة شوية عشان تكون واضحة ومميزة */
+  height: 36px !important;
+}
+
+
+
+
+
+
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+
+/* إعدادات النجوم الفردية ودورانها */
+.pyramid-star {
+  position: absolute;
+  z-index: 5;
+  object-fit: contain;
+  animation: spinClockwise 15s linear infinite;
+}
+
+/* 1. الهرم الأوسط (اللي في النص) */
+.star-center {
+  top: 58%;       /* لو حسيتيه عالي، زيدي الرقم خليه 49% أو 50% عشان ينزل للقمة */
+  left: 42%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+}
+
+/* 2. الهرم الشمالي (اللي على الشمال) */
+.star-left {
+  top: 65%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
+  left: 16%;      /* لو عايزاه يروح يمين أو شمال، غيري النسبة دي (مثلاً 26% أو 28%) */
+  width: 90px;
+  height: 90px;
+}
+
+/* 3. الهرم اليميني (اللي على اليمين) */
+.star-right {
+  top: 65%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
+  right: 13%;     /* لو عايزاه يروح يمين أو شمال، غيري النسبة دي */
+  width: 90px;
+  height: 90px;
+}
+
+
+
+
+
+
+.video-container {
+    width: 300px;       /* عرض الصندوق (تقدري تغيريه حسب رغبتك) */
+    height: 300px;      /* الطول نفس العرض عشان يبقى مربع */
+    max-width: 100%;    /* عشان يبقى متجاوب مع الشاشات الصغيرة */
+    margin: 20px auto;  /* مسافة وسنترد في النص */
+    border-radius: 12px;/* حواف دائرية خفيفة لو تحبي (اختياري) */
+    overflow: hidden;   /* عشان أي زيادة تتقص جوه المربع */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* ظل خفيف يشبه التصميم */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* عشان الفيديو يملا المربع مظبوط من غير ما يتطمطم */
+}
+
+
+
+
+/* تنسيق النص عشان يقرب من الصورة وما يبقاش فيه مسافات كبيرة */
+.story-text {
+    text-align: center;
+    margin-bottom: 5px; /* مسافة صغيرة جداً تحت النص */
+}
+
+/* حاوية الصورة الأخيرة عشان تقفل الصفحة وتبقى ملتصقة */
+.final-image-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* بيمنع أي فراغ خفي تحت الصورة */
+}
+
+.final-image-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* بيمنع الفراغ الافتراضي للصور */
+    border-radius: 0; /* بدون حواف دائرية عشان تقفل النهاية تماماً */
+}
+
+
+
+/* 1. نتأكد إن الحاوية العامة أو الـ body مفيش تحتها أي مسافات فاضية */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3b0d11; /* نفس لون الخلفية عشان لو فيه أي إطار يبان متناسق */
+}
+
+
+/* 1. تأكدي إن حاوية الصفحة نفسها مفيش تحتها مسافات */
+.page-two-container {
+    padding-bottom: 0; /* لو فيه 180px أو أي رقم هنا، لازم يتشال عشان مايعملش فراغ */
+}
+
+/* 2. الحاوية الخاصة بالصورة */
+.final-image-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: hidden; /* السر الأول: أي حاجة هتخرج بره الحاوية دي هتتقص ومش هتبان */
+}
+
+/* 3. الصورة نفسها */
+.final-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: -12%; /* السر التاني: ده هيسحب الصورة لتحت ويقص الجزء الفاضي اللي تحت */
+    margin-top: -9%;
+   
+}
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+
+.quran-section {
+    text-align: center;
+    direction: rtl;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+}
+
+.quran-verse {
+    font-family: 'Amiri', serif;
+    font-size: 22px; /* يمكنك زيادة أو تقليل الحجم حسب رغبتك */
+    line-height: 2.3; /* مسافة مريحة ومتناسقة بين السطور الثلاثة */
+    font-weight: 700;
+    color: #f4e3c1; /* اللون الذهبي المتناسق مع الثيم */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.surah-name {
+    display: inline-block;
+    font-size: 17px;
+    color: #e2d2b5;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+/* 1. الحاوية الخاصة بالصورة */
+.final-image-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: visible !important; /* غيرناها لـ visible عشان تجمعي الوردة بدون ما تتقص */
+    position: relative;          /* عشان نتحكم في الطبقات */
+    z-index: 10;                 /* يضمن إن الحاوية بالوردة تكون فوق الـ Gate */
+}
+
+/* 2. الصورة نفسها (الوردة) */
+.final-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -25%;  /* زودي القيمة بالسالب لحد ما طرف الوردة يلمس الـ Gate تماماً */
+    margin-bottom: 0;  /* شيلنا الـ margin-bottom بالسالب عشان ما تبوظش الأبعاد */
+    position: relative;
+    z-index: 10;       /* يضمن ظهور الوردة في الطبقة الأمامية */
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed & Eman Wedding Invitation</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-wrapper">
+
+
+
+
+
+   <header class="hero-section">
+  <!-- صورة الغلاف الأصلية -->
+  <img src="./image1.jfif" alt="Invitation Cover" class="hero-image">
+  
+  <!-- النجمة المفردة فوق الأهرامات الثلاثة -->
+  <img src="./el gowa.png" alt="Pyramid Star Center" class="pyramid-star star-center">
+  <img src="./el gowa.png" alt="Pyramid Star Left" class="pyramid-star star-left">
+  <img src="./el gowa.png" alt="Pyramid Star Right" class="pyramid-star star-right">
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+   <section class="gate-section">
+  <!-- المحتوى الداخلي بالكامل محصور داخل gate-content -->
+  <!-- 2. قسم البوابة والشجر -->
+    <section class="gate-section">
+      
+      <!-- الشجرتين على الأجناب -->
+      <img src="./tree.png" alt="Tree Left" class="tree tree-left">
+      <img src="./tree.png" alt="Tree Right" class="tree tree-right">
+
+      <div class="gate-wrapper">
+        <img src="./secondpage.png" alt="Red Gate" class="gate-image">
+        
+        <!-- حاوية النجمة الدوارة (دوران دائري مستمر) -->
+       
+         <div class="star-container">
+  <!-- الصورة الكبيرة (اللي بره) -->
+  <img src="./el gowa.png" alt="Gold Star Outer" class="star-outer">
+  <!-- الصورة الصغيرة (اللي جوه) -->
+  <img src="./el bara.png" alt="Gold Star Inner" class="star-inner">
+</div>
+  <div class="gate-content">
+  <!-- 1. SAVE THE DATE -->
+  <div class="save-the-date">SAVE THE DATE</div>
+
+  <!-- 2. العداد التنازلي -->
+  <div class="timer">
+    <div class="time-box"><span id="days">00</span><small>DAYS</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span id="hours">00</span><small>HOURS</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span id="minutes">00</span><small>MINUTES</small></div>
+    <div class="colon">:</div>
+    <div class="time-box"><span id="seconds">00</span><small>SECONDS</small></div>
+  </div>
+
+  <!-- 3. المكان والعنوان -->
+  <div class="wedding-details">
+    <span class="at-text">AT</span>
+    <h2 class="hotel-name">RESORT HOTEL</h2>
+  </div>
+
+  <!-- 4. زر اللوكيشن -->
+  <div class="buttons-container">
+    <a href="https://maps.app.goo.gl/be79V8kaNnSDc3Vh9?g_st=iw" target="_blank" class="gold-btn">CLICK HERE FOR LOCATION</a>
+  </div>
+
+  <!-- 5. اليوم والتاريخ -->
+  <div class="event-date-info">
+    <span class="event-day">THURSDAY</span>
+    <span class="event-date">29 / 10 / 2026</span>
+  </div>
+
+
+
+
+ 
+    </section>
+
+ 
+    
+
+ 
+</section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="final-image-container">
+    <img src="./wardakbera.png" alt="Final Section Image">
+  </div>
+
+ 
+
+
+
+<script>
+  // التاريخ: 29 أكتوبر 2026 - الساعة 6:00 مساءً
+  const targetDate = new Date(2026, 9, 29, 18, 0, 0).getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+</script>
+</body>
+</html>
