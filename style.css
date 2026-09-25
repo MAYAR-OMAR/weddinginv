@@ -941,8 +941,8 @@ body,
 
 /* 1. الهرم الأوسط (اللي في النص) */
 .star-center {
-  top: 58%;       /* لو حسيتيه عالي، زيدي الرقم خليه 49% أو 50% عشان ينزل للقمة */
-  left: 42%;
+  top: 61%;       /* لو حسيتيه عالي، زيدي الرقم خليه 49% أو 50% عشان ينزل للقمة */
+  left: 40%;
   transform: translateX(-50%);
   width: 90px;
   height: 90px;
@@ -950,7 +950,7 @@ body,
 
 /* 2. الهرم الشمالي (اللي على الشمال) */
 .star-left {
-  top: 65%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
+  top: 68%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
   left: 16%;      /* لو عايزاه يروح يمين أو شمال، غيري النسبة دي (مثلاً 26% أو 28%) */
   width: 90px;
   height: 90px;
@@ -958,8 +958,8 @@ body,
 
 /* 3. الهرم اليميني (اللي على اليمين) */
 .star-right {
-  top: 65%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
-  right: 13%;     /* لو عايزاه يروح يمين أو شمال، غيري النسبة دي */
+  top: 67%;       /* لو عايزاه ينزل للهرم، زيدي الرقم ده */
+  right: 16%;     /* لو عايزاه يروح يمين أو شمال، غيري النسبة دي */
   width: 90px;
   height: 90px;
 }
@@ -1106,3 +1106,128 @@ body {
     position: relative;
     z-index: 10;       /* يضمن ظهور الوردة في الطبقة الأمامية */
 }
+
+.music-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid #d4af37;
+        color: #e6cb95;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+        background: rgba(212, 175, 55, 0.3);
+    }
+
+
+
+  
+
+
+
+
+    .music-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        /* نفس لون خلفية الويب سايت النبيتي الغامق من غير أي لون غريب */
+        background-color: #2b090c;
+        /* إطار ذهبي فخم حوالين الأيقونة */
+        border: 2px solid #d4af37;
+        color: #e6cb95; /* لون الأيقونة من جوه (الموسيقا) */
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+        background-color: #3b0c10;
+        transform: scale(1.05);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
