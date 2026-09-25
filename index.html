@@ -175,26 +175,35 @@
 
 <script>
   // التاريخ: 29 أكتوبر 2026 - الساعة 6:00 مساءً
-  const targetDate = new Date(2026, 11, 20, 20, 0, 0).getTime();
+// November fel JavaScript bykon raqamoh 10 (mesh 11)
+// w 20 Nov 2026 sa3a 8 bel-layl (20, 0, 0)
+const targetDate = new Date(2026, 11, 20, 20, 0, 0).getTime();
 
-  function updateCountdown() {
+function updateCountdown() {
     const now = new Date().getTime();
     const difference = targetDate - now;
 
     if (difference > 0) {
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    } else {
+        document.getElementById('days').textContent = "00";
+        document.getElementById('hours').textContent = "00";
+        document.getElementById('minutes').textContent = "00";
+        document.getElementById('seconds').textContent = "00";
     }
-  }
+}
 
-  
+// Dah el-mohem: ykhalaly el-function tetnaffaz kol sanya bel-zabt!
+setInterval(updateCountdown, 1000);
+updateCountdown(); // 3ashan tebtady enta w taftah el-safha men gher entezar sanya
     // Tsh3'il el o8nya awl ma ydos f ay mkan b el saf7a
    const audio = document.getElementById('wedding-audio');
     const musicBtn = document.getElementById('musicToggle');
