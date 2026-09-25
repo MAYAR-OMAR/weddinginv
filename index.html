@@ -50,16 +50,67 @@
 </head>
 <body>
 
+<!-- شاشة الظرف والـ Overlay -->
+<div id="envelope-overlay">
+  <div class="stage-title">You are cordially invited</div>
+
+  <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Open invitation envelope">
+    
+    <!-- الكارت اللي بيطلع من جوه الظرف -->
+    <div class="card-inside">
+      <div>
+        <div class="eb">Together with their families</div>
+        <div class="names">Mohamed &amp; Hanan</div>
+        <div class="dt">20th November 2026 · 8:00 PM</div>
+      </div>
+    </div>
+
+    <!-- جسم الظرف -->
+    <div class="envelope-body">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="pyramids-strip">
+        <svg viewBox="0 0 340 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,90 45,45 90,90" fill="#8a5a28" opacity="0.55"/>
+          <polygon points="60,90 115,30 170,90" fill="#cea25c" opacity="0.8"/>
+          <polygon points="140,90 185,50 230,90" fill="#8a5a28" opacity="0.55"/>
+          <polygon points="200,90 260,25 320,90" fill="#e0b96f" opacity="0.9"/>
+          <polygon points="290,90 320,55 340,90" fill="#8a5a28" opacity="0.5"/>
+          <line x1="115" y1="30" x2="115" y2="90" stroke="#5a1c1f" stroke-width="1" opacity="0.5"/>
+          <line x1="260" y1="25" x2="260" y2="90" stroke="#5a1c1f" stroke-width="1" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- غطاء الظرف المتحرك -->
+    <div class="envelope-flap">
+      <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#e0b96f" stroke-width="1" opacity="0.5">
+          <line x1="100" y1="14" x2="100" y2="0"/>
+          <line x1="78" y1="20" x2="62" y2="4"/>
+          <line x1="122" y1="20" x2="138" y2="4"/>
+          <line x1="60" y1="30" x2="38" y2="18"/>
+          <line x1="140" y1="30" x2="162" y2="18"/>
+        </g>
+        <polygon points="60,86 100,20 140,86" fill="#e0b96f" opacity="0.9"/>
+        <line x1="100" y1="20" x2="100" y2="86" stroke="#5a1c1f" stroke-width="1" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- الختم الذهبي -->
+    <div class="seal">H&amp;M</div>
+  </div>
+
+  <div class="tap-hint">اضغط هنا لفتح الدعوة</div>
+</div>
 
 
-
-
-
+</div>
   <div class="main-wrapper">
 
 
 <!-- مكان الأغنية -->
-<div class="music-btn" id="musicToggle" title="Tsh3'il / E2af el Mwsika">🎵</div>
+
 
 <!-- 2. Malaf el o8nya -->
 <audio id="wedding-audio" loop>
@@ -158,6 +209,71 @@
 
 
 
+<div class="quran-section">
+    <p class="quran-verse">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا<br>
+        لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً<br>
+        
+    </p>
+</div>
+
+
+
+
+  <div class="page-two-container">
+  <!-- العنوان الرئيسي للصفحة -->
+  <div class="section-header">
+    <span class="sub-title">OUR STORY</span>
+    <h2 class="main-title">WHERE WE MET</h2>
+  </div>
+
+  <!-- خريطة التلاقي والتوصيل -->
+  <div class="story-map-container">
+    <svg class="map-routes" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- خط من مصر للرياض -->
+      <path d="M 50 110 Q 110 50 150 75" stroke="#c9a04a" stroke-width="2" stroke-dasharray="4 4" />
+      <!-- خط من الأردن للرياض -->
+      <path d="M 250 40 Q 200 50 150 75" stroke="#c9a04a" stroke-width="2" stroke-dasharray="4 4" />
+    </svg>
+
+    <!-- نقطة مصر (العريس) -->
+    <div class="map-location egypt">
+      <div class="pin-icon">📍</div>
+      <span class="country-name">MANSORA</span>
+      <span class="person-tag">GROOM</span>
+    </div>
+
+    <!-- نقطة الأردن (العروسة) -->
+    <div class="map-location jordan">
+      <div class="pin-icon">📍</div>
+      <span class="country-name">EGYPT</span>
+      <span class="person-tag">BRIDE</span>
+    </div>
+
+    <!-- نقطة التلاقي (الرياض) -->
+    <div class="map-location riyadh-meet">
+      <div class="heart-pulse">❤️</div>
+      
+      <span class="meet-sub">Where Our Hearts Met</span>
+    </div>
+  </div>
+
+<div class="video-container">
+    <video autoplay muted loop playsinline>
+        <source src="./map2.mp4" type="video/mp4">
+        
+    </video>
+</div>
+
+
+
+  <!-- نص القصة الفخم -->
+  <div class="story-text">
+    <p>Two hearts from two different cities, one beautiful destination.</p>
+    <p class="story-quote">"From Mansora & Cairo , our forever story began."</p>
+  </div>
+
+
 
 
 
@@ -200,35 +316,44 @@ function updateCountdown() {
         document.getElementById('seconds').textContent = "00";
     }
 }
-
 // Dah el-mohem: ykhalaly el-function tetnaffaz kol sanya bel-zabt!
 setInterval(updateCountdown, 1000);
-updateCountdown(); // 3ashan tebtady enta w taftah el-safha men gher entezar sanya
-    // Tsh3'il el o8nya awl ma ydos f ay mkan b el saf7a
-   const audio = document.getElementById('wedding-audio');
-    const musicBtn = document.getElementById('musicToggle');
+updateCountdown();
+(function(){
+  var wrap = document.getElementById('envelopeWrap');
+  var overlay = document.getElementById('envelope-overlay');
+  var audio = document.getElementById('wedding-audio');
+  var opened = false;
 
-    window.addEventListener('DOMContentLoaded', () => {
-        audio.play().catch(() => {});
-    });
+  function openEnvelope(){
+    if(opened) return;
+    opened = true;
 
-    document.body.addEventListener('click', function() {
-        if (audio.paused) {
-            audio.play();
-        }
-    }, { once: true });
+    // 1. تشغيل الأغنية
+    if(audio){
+      audio.play().catch(e => console.log("Audio play blocked", e));
+    }
 
-    musicBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (audio.paused) {
-            audio.play();
-            musicBtn.style.borderColor = "#ffffff";
-        } else {
-            audio.pause();
-            musicBtn.style.borderColor = "#d4af37";
-        }
-    });
+    // 2. تفعيل الأنيميشن للظرف
+    wrap.classList.add('open');
+    overlay.classList.add('opened');
+    
+    setTimeout(function(){ 
+      wrap.classList.add('lift'); 
+    }, 1300);
+
+    // 3. إخفاء شاشة الظرف بالكامل لإظهار موقعك الأساسي
+    setTimeout(function(){
+      overlay.classList.add('fade-out');
+    }, 2000);
+  }
+
+  wrap.addEventListener('click', openEnvelope);
+  wrap.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openEnvelope(); }
+  });
+})();
 </script>
-</script>
+
 </body>
 </html>

@@ -211,7 +211,7 @@ html, body {
   gap: 10px;
   width: 100%;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .gold-btn {
@@ -970,7 +970,7 @@ body,
 
 
 .video-container {
-    width: 300px;       /* عرض الصندوق (تقدري تغيريه حسب رغبتك) */
+    width: 500px;       /* عرض الصندوق (تقدري تغيريه حسب رغبتك) */
     height: 300px;      /* الطول نفس العرض عشان يبقى مربع */
     max-width: 100%;    /* عشان يبقى متجاوب مع الشاشات الصغيرة */
     margin: 20px auto;  /* مسافة وسنترد في النص */
@@ -982,7 +982,7 @@ body,
 .video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* عشان الفيديو يملا المربع مظبوط من غير ما يتطمطم */
+    object-fit: contain;  /* عشان الفيديو يملا المربع مظبوط من غير ما يتطمطم */
 }
 
 
@@ -1101,133 +1101,214 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    margin-top: -25%;  /* زودي القيمة بالسالب لحد ما طرف الوردة يلمس الـ Gate تماماً */
+    margin-top: -4%;  /* زودي القيمة بالسالب لحد ما طرف الوردة يلمس الـ Gate تماماً */
     margin-bottom: 0;  /* شيلنا الـ margin-bottom بالسالب عشان ما تبوظش الأبعاد */
     position: relative;
     z-index: 10;       /* يضمن ظهور الوردة في الطبقة الأمامية */
 }
 
-.music-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid #d4af37;
-        color: #e6cb95;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.1rem;
-        cursor: pointer;
-        z-index: 1000;
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-    }
 
-    .music-btn:hover {
-        background: rgba(212, 175, 55, 0.3);
-    }
 
 
 
-  
 
 
 
-
-    .music-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        /* نفس لون خلفية الويب سايت النبيتي الغامق من غير أي لون غريب */
-        background-color: #2b090c;
-        /* إطار ذهبي فخم حوالين الأيقونة */
-        border: 2px solid #d4af37;
-        color: #e6cb95; /* لون الأيقونة من جوه (الموسيقا) */
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.1rem;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        transition: all 0.3s ease;
-    }
-
-    .music-btn:hover {
-        background-color: #3b0c10;
-        transform: scale(1.05);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 30%, #4a1518 0%, #170708 75%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 20px;
+    z-index: 99999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+
+  .stage-title{
+    font-family:'Cinzel',serif;
+    color:#f0d59a;
+    letter-spacing:0.35em;
+    font-size:11px;
+    text-transform:uppercase;
+    opacity:0.8;
+    text-align:center;
+  }
+
+  .envelope-wrap{
+    position:relative;
+    width:min(84vw,340px);
+    height:calc(min(84vw,340px) * 0.7);
+    cursor:pointer;
+    perspective:1600px;
+  }
+
+  .card-inside{
+    position:absolute;
+    left:5%;
+    width:90%;
+    top:2%;
+    height:82%;
+    background:linear-gradient(165deg,#fffdf6,#f4ead0);
+    border:1px solid #cea25c;
+    border-radius:2px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.65);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    padding:16px;
+    z-index:1;
+    transition:transform 1.15s cubic-bezier(.2,.8,.2,1) 0.35s, opacity 0.6s ease 1.5s;
+  }
+  .card-inside .eb{
+    font-family:'Cinzel',serif;
+    color:#8a6a3a;
+    font-size:10px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+  }
+  .card-inside .names{
+    font-family:'Cinzel',serif;
+    color:#3a1113;
+    font-size:20px;
+    letter-spacing:0.06em;
+    margin:8px 0;
+  }
+  .card-inside .dt{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#5a1c1f;
+    font-size:14px;
+  }
+
+  .envelope-body{
+    position:absolute; inset:0;
+    border-radius:4px;
+    background: linear-gradient(180deg, #7a2a2c 0%, #3a1113 55%, #2a0d0f 100%);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(206,162,92,0.35), inset 0 0 40px rgba(0,0,0,0.35);
+    z-index:3;
+    overflow:hidden;
+  }
+  .envelope-body::after{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(206,162,92,0.4);
+    border-radius:2px;
+    pointer-events:none;
+    z-index:6;
+  }
+  .fold-left,.fold-right{
+    position:absolute;
+    top:0; bottom:0;
+    width:52%;
+    background:linear-gradient(160deg, rgba(0,0,0,0.18), rgba(0,0,0,0));
+  }
+  .fold-left{left:0; clip-path:polygon(0 0,100% 50%,0 100%);}
+  .fold-right{right:0; clip-path:polygon(100% 0,0 50%,100% 100%);}
+
+  .pyramids-strip{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:30%;
+    z-index:2;
+  }
+  .pyramids-strip svg{width:100%; height:100%; display:block;}
+
+  .envelope-flap{
+    position:absolute;
+    top:0; left:0; right:0;
+    height:60%;
+    clip-path:polygon(0 0, 100% 0, 50% 100%);
+    transform-origin:top center;
+    transform:rotateX(0deg);
+    transition:transform 1s cubic-bezier(.5,0,.2,1);
+    z-index:5;
+    background:linear-gradient(200deg, #6a2226, #2a0d0f);
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  .envelope-flap svg{
+    position:absolute;
+    bottom:0; left:50%;
+    transform:translateX(-50%);
+    width:78%;
+  }
+  .envelope-wrap.open .envelope-flap{
+    transform:rotateX(178deg);
+  }
+  .envelope-wrap.open .card-inside{
+    transform:translateY(-82%) scale(1.1);
+  }
+  .envelope-wrap.open.lift .card-inside{
+    opacity:0;
+  }
+
+  .seal{
+    position:absolute;
+    top:47%; left:50%;
+    width:58px; height:58px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle at 35% 30%, #e0b96f, #8a5a28 78%);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.6), inset 0 0 7px rgba(0,0,0,0.45);
+    z-index:7;
+    font-family:'Cinzel',serif;
+    color:#3a1113;
+    font-size:17px;
+    letter-spacing:1px;
+    transition:opacity 0.4s ease, transform 0.4s ease;
+  }
+  .seal::before{
+    content:"";
+    position:absolute;
+    inset:4px;
+    border:1px solid rgba(58,17,19,0.4);
+    border-radius:50%;
+  }
+  .envelope-wrap.open .seal{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(0.4);
+  }
+
+  .tap-hint{
+    color:#cea25c;
+    font-family:'Cormorant Garamond',sans-serif;
+    font-size:16px;
+    letter-spacing:0.03em;
+    opacity:0.85;
+    animation:pulse 2.2s ease-in-out infinite;
+    direction:rtl;
+  }
+  #envelope-overlay.opened .tap-hint{opacity:0;}
+  @keyframes pulse{
+    0%,100%{opacity:0.35;}
+    50%{opacity:0.9;}
+  }
+
+  .fade-out {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none;
+  }
+.video-container {
+    width: 280px;         /* عرض صغير عشان الفيديو ميبقاش كبير أوي */
+    max-width: 100%;      /* عشان يفضل متجاوب مع الموبايل */
+    height: 420px;        /* ظبطنا الارتفاع عشان ميكونش طويل أوي أو قصير أوي */
+    margin: 20px auto;    /* مسافة وcenterd في النص */
+    border-radius: 12px;  /* حواف دائرية */
+    overflow: hidden;     /* عشان أي زيادات تتقص جوه الصندوق */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* عشان الفيديو يبان كله من غير ما يتقص من جواه */
+}
