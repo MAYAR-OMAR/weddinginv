@@ -1312,3 +1312,10 @@ body {
     height: 100%;
     object-fit: contain;  /* عشان الفيديو يبان كله من غير ما يتقص من جواه */
 }
+
+
+
+.gold-btn {
+    color: #170708 !important; /* Lon ghamy zay el-maroon el-deep 3ashan yban 3al-dahby */
+    font-weight: bold;         /* 3ashan el-khat ykon t2eel w wade7 */
+}
